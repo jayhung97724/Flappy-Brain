@@ -16,10 +16,41 @@ public class FlappyScript : MonoBehaviour
     public float VelocityPerJump = 2;
     public float XSpeed = 1;
 
+    TGCConnectionController controller;
+    private int blink;
+
     // Use this for initialization
     void Start()
     {
-
+        controller = GameObject.Find("NeuroSkyTGCController").GetComponent<TGCConnectionController>();
+        controller.UpdateBlinkEvent += OnUpdateBlinkEvent;
+        controller.Connect();
+    }
+    void OnUpdateBlinkEvent(int value){
+        if (GameStateManager.GameState == GameState.Intro)
+        {
+            BoostOnYAxis();
+            GameStateManager.GameState = GameState.Playing;
+            IntroGUI.SetActive(false);
+            ScoreManagerScript.Score = 0;
+        }
+        else if (GameStateManager.GameState == GameState.Playing)
+        {
+            BoostOnYAxis();
+        }
+        else if (GameStateManager.GameState == GameState.Dead)
+        {
+            GameStateManager.GameState = GameState.Intro;
+            Application.LoadLevel(Application.loadedLevelName);
+        }
+	}
+    bool Blinked()
+    {
+        if (blink >= 40) {
+            return true;
+        }
+        else
+            return false;
     }
 
     FlappyYAxisTravelState flappyYAxisTravelState;
@@ -76,7 +107,7 @@ public class FlappyScript : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevelName);
             }
         }
-
+        
     }
 
 
