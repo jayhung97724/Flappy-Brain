@@ -19,34 +19,40 @@ public class FlappyScript : MonoBehaviour
     TGCConnectionController controller;
     private int blink;
 
-    // Use this for initialization
-    void Start()
-    {
+    void Awake(){
+        // DontDestroyOnLoad(controller);
         controller = GameObject.Find("NeuroSkyTGCController").GetComponent<TGCConnectionController>();
         controller.UpdateBlinkEvent += OnUpdateBlinkEvent;
         controller.Connect();
     }
+    // Use this for initialization
+    void Start()
+    {
+    }
     void OnUpdateBlinkEvent(int value){
-        if (GameStateManager.GameState == GameState.Intro)
-        {
-            BoostOnYAxis();
-            GameStateManager.GameState = GameState.Playing;
-            IntroGUI.SetActive(false);
-            ScoreManagerScript.Score = 0;
-        }
-        else if (GameStateManager.GameState == GameState.Playing)
-        {
-            BoostOnYAxis();
-        }
-        else if (GameStateManager.GameState == GameState.Dead)
-        {
-            GameStateManager.GameState = GameState.Intro;
-            Application.LoadLevel(Application.loadedLevelName);
-        }
+        Debug.Log("Blinked");
+        // if (GameStateManager.GameState == GameState.Intro)
+        // {
+        //     BoostOnYAxis();
+        //     GameStateManager.GameState = GameState.Playing;
+        //     IntroGUI.SetActive(false);
+        //     ScoreManagerScript.Score = 0;
+        // }
+        // else if (GameStateManager.GameState == GameState.Playing)
+        // {
+        //     BoostOnYAxis();
+        // }
+        // else if (GameStateManager.GameState == GameState.Dead)
+        // {
+        //     GameStateManager.GameState = GameState.Intro;
+        //     Application.LoadLevel(Application.loadedLevelName);
+        // }
+        blink = value;
 	}
     bool Blinked()
     {
-        if (blink >= 40) {
+        if (blink != 0) {
+            blink = 0;
             return true;
         }
         else
@@ -70,20 +76,20 @@ public class FlappyScript : MonoBehaviour
 
         if (GameStateManager.GameState == GameState.Intro)
         {
+            ScoreManagerScript.Score = 0;
             MoveBirdOnXAxis();
-            if (WasTouchedOrClicked())
+            if (WasTouchedOrClicked() || Blinked())
             {
                 BoostOnYAxis();
                 GameStateManager.GameState = GameState.Playing;
                 IntroGUI.SetActive(false);
-                ScoreManagerScript.Score = 0;
             }
         }
 
         else if (GameStateManager.GameState == GameState.Playing)
         {
             MoveBirdOnXAxis();
-            if (WasTouchedOrClicked())
+            if (WasTouchedOrClicked() || Blinked())
             {
                 BoostOnYAxis();
             }
@@ -101,7 +107,7 @@ public class FlappyScript : MonoBehaviour
 
             //check if user wants to restart the game
             if (restartButtonGameCollider == Physics2D.OverlapPoint
-                (Camera.main.ScreenToWorldPoint(contactPoint)))
+                (Camera.main.ScreenToWorldPoint(contactPoint)) || Blinked())
             {
                 GameStateManager.GameState = GameState.Intro;
                 Application.LoadLevel(Application.loadedLevelName);
