@@ -10,10 +10,10 @@ public class FlappyScript : MonoBehaviour
 
     public AudioClip FlyAudioClip, DeathAudioClip, ScoredAudioClip;
     public Sprite GetReadySprite;
-    public float RotateUpSpeed = 0.5f, RotateDownSpeed = 0.8f;
+    public float RotateUpSpeed = 1, RotateDownSpeed = 1;
     public GameObject IntroGUI, DeathGUI;
     public Collider2D restartButtonGameCollider;
-    public float VelocityPerJump = 2;
+    public float VelocityPerJump = 3;
     public float XSpeed = 1;
 
     TGCConnectionController controller;
