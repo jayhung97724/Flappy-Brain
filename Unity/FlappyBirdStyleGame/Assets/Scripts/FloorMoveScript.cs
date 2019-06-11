@@ -13,11 +13,13 @@ public class FloorMoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localPosition.x < -3.9f)
-        {
-            transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
+        if (GameStateManager.GameState == GameState.Playing){
+            if (transform.localPosition.x < -3.9f)
+            {
+                transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
+            }
+            transform.Translate(-Time.deltaTime, 0, 0);
         }
-        transform.Translate(-Time.deltaTime, 0, 0);
     }
 
 

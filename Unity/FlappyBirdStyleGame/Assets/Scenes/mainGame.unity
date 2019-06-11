@@ -551,7 +551,7 @@ MonoBehaviour:
   ScoredAudioClip: {fileID: 8300000, guid: 6e07426d69e17e54c86f5b9436253f92, type: 3}
   GetReadySprite: {fileID: 21300020, guid: aab37b51d898f764abaf04d75f0eb322, type: 3}
   RotateUpSpeed: 0.5
-  RotateDownSpeed: 0.8
+  RotateDownSpeed: 0.5
   IntroGUI: {fileID: 686664586}
   DeathGUI: {fileID: 1776645348}
   restartButtonGameCollider: {fileID: 1325426905}
