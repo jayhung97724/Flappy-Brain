@@ -14,7 +14,7 @@
 
 ## Gaming
 1. Play the game in Editor mode, remember to open the Game window of Unity and the bluetooth.
-2. After the brain is flapping up and down (during which the app is connecting to TGC-Connector), you can blink yo start the game.
+2. After the brain is flapping up and down (during which the app is connecting to TGC-Connector), you can blink to start the game.
 
     ![](./Screenshot/start.gif)
 3. If you die, blink again to restart the game.
