@@ -23,4 +23,8 @@
 1. [Project proposal](./Documents/IoT-porject.pdf)
 2. [Progress report 1](./Documents/IOT_team1_190523.pptx)
 3. [Progress report 2](./Documents/IOT_team1_190606.pptx) [Test Video](./Screenshot/[20190606]Flappy_Brain_Test_Video.mp4)
-4. [.stl file of the case](./Documents/case.stl)
+4. [stl file of the case](./Documents/case.stl)
+5. [Script of intro video](https://hackmd.io/@YoYoHung/HyDey-p04)
+
+## Product Introduction Video
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/KCFnJHuX_pA/0.jpg)](https://youtu.be/KCFnJHuX_pA "Presented by IOT-Complain")
