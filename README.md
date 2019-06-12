@@ -22,7 +22,7 @@
 ## Documents 
 1. [Project proposal](./Documents/IoT-porject.pdf)
 2. [Progress report 1](./Documents/IOT_team1_190523.pptx)
-3. [Progress report 2](./Documents/IOT_team1_190606.pptx) [Test Video](./Screenshot/[20190606]Flappy_Brain_Test_Video.mp4)
+3. [Progress report 2](./Documents/IOT_team1_190606.pptx), [Test Video](./Screenshot/[20190606]Flappy_Brain_Test_Video.mp4)
 4. [stl file of the case](./Documents/case.stl)
 5. [Script of intro video](https://hackmd.io/@YoYoHung/HyDey-p04)
 
