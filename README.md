@@ -27,4 +27,4 @@
 5. [Script of intro video](https://hackmd.io/@YoYoHung/HyDey-p04)
 
 ## Product Introduction Video
-<a href="https://youtu.be/KCFnJHuX_pA" target="_blank"><img src="https://i.imgur.com/ndnCCFw.png"></a>
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/ndnCCFw.png)](https://youtu.be/KCFnJHuX_pA "Presented by IOT-Complain")
